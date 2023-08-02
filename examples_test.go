@@ -1,16 +1,18 @@
-package template_test
+package chslog_test
 
 import (
-	"atomicgo.dev/template"
-	"fmt"
+	slogch "atomicgo.dev/chslog"
+	"log/slog"
+	"os"
 )
 
-func Example_demo() {
-	fmt.Println(template.HelloWorld())
-	// Output: Hello, World!
-}
+func ExampleChoose() {
+	// Uses a text logger in development and a JSON logger in production.
+	prodHandler := slog.NewJSONHandler(os.Stdout, nil)
+	devHandler := slog.NewTextHandler(os.Stdout, nil)
 
-func ExampleHelloWorld() {
-	fmt.Println(template.HelloWorld())
-	// Output: Hello, World!
+	handler := slogch.Choose(prodHandler, devHandler)
+	logger := slog.New(handler)
+
+	logger.Info("Hello, World!", "foo", "bar")
 }

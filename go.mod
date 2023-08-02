@@ -1,3 +1,5 @@
-module atomicgo.dev/template
+module atomicgo.dev/chslog
 
-go 1.18
+go 1.21
+
+require atomicgo.dev/isprod v0.0.1 // indirect
