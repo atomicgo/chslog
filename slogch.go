@@ -15,7 +15,7 @@ var Conditions = isprod.DefaultConditions
 func Choose(prodHandler, devHandler slog.Handler) slog.Handler {
 	if Conditions.Check() {
 		return prodHandler
-	} else {
-		return devHandler
 	}
+
+	return devHandler
 }
