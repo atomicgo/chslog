@@ -1,8 +1,9 @@
 package chslog
 
 import (
-	"atomicgo.dev/isprod"
 	"log/slog"
+
+	"atomicgo.dev/isprod"
 )
 
 // Conditions holds the environment conditions that are checked.

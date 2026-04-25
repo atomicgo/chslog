@@ -1,9 +1,10 @@
 package chslog_test
 
 import (
-	slogch "atomicgo.dev/chslog"
 	"log/slog"
 	"os"
+
+	slogch "atomicgo.dev/chslog"
 )
 
 func ExampleChoose() {
